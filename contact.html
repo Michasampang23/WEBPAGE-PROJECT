@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" >
+<html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -24,7 +24,6 @@
       border-color: #4ade80;
       box-shadow: 0 0 5px #4ade80;
     }
-    /* Scrollbar for textarea */
     textarea::-webkit-scrollbar {
       width: 8px;
     }
@@ -37,133 +36,111 @@
 <body class="font-sans">
 
 <!-- Navbar -->
-  <header class="bg-green-600 shadow-md sticky top-0 z-50">
-    <div class="max-w-7xl mx-auto flex justify-between items-center px-6 py-4">
-      <h1 class="text-3xl font-extrabold text-black tracking-tight">ACTIVION Studios</h1>
-      <nav>
-        <ul class="flex flex-wrap gap-4 text-white font-semibold">
-          <li><a href="homepage.html" class="hover:text-black transition">Home</a></li>
-          <li><a href="about.html" class="hover:text-black transition">About</a></li>
-          <li><a href="gallery.html" class="hover:text-black transition font-bold underline">Shop</a></li>
-          <li><a href="mission-vision.html" class="hover:text-black transition">Mission</a></li>
-          <li><a href="services.html" class="hover:text-black transition">Services</a></li>
-          <li><a href="testimonials.html" class="hover:text-black transition">Testimonials</a></li>
-          <li><a href="contact.html" class="hover:text-black transition">Contact</a></li>
-          <li><a href="blog.html" class="hover:text-black transition">Blog</a></li>
-          <li><a href="faq.html" class="hover:text-black transition">FAQ</a></li>
-          <li><a href="profile.html" class="hover:text-black transition">Profile</a></li>
-        </ul>
-      </nav>
-    </div>
-  </header>
+<header class="bg-green-600 shadow-md sticky top-0 z-50">
+  <div class="max-w-7xl mx-auto flex justify-between items-center px-6 py-4">
+    <h1 class="text-3xl font-extrabold text-black tracking-tight">ACTIVION Studios</h1>
+    <nav>
+      <ul class="flex flex-wrap gap-4 text-white font-semibold">
+        <li><a href="homepage.html" class="hover:text-black transition">Home</a></li>
+        <li><a href="about.html" class="hover:text-black transition">About</a></li>
+        <li><a href="gallery.html" class="hover:text-black transition">Shop</a></li>
+        <li><a href="mission-vision.html" class="hover:text-black transition">Mission</a></li>
+        <li><a href="services.html" class="hover:text-black transition">Services</a></li>
+        <li><a href="testimonials.html" class="hover:text-black transition">Testimonials</a></li>
+        <li><a href="contact.html" class="hover:text-black transition font-bold underline">Contact</a></li>
+        <li><a href="blog.html" class="hover:text-black transition">Blog</a></li>
+        <li><a href="faq.html" class="hover:text-black transition">FAQ</a></li>
+        <li><a href="profile.html" class="hover:text-black transition">Profile</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
 
-  <!-- Page header -->
-  <section class="max-w-4xl mx-auto px-6 py-16 text-center" data-aos="fade-down">
-    <h2 class="text-4xl font-bold text-green-400 mb-4">Get in Touch</h2>
-    <p class="text-green-200 text-lg max-w-xl mx-auto">
-      We'd love to hear from you! Fill out the form below or reach us directly at our email.
-    </p>
-  </section>
+<!-- Page header -->
+<section class="max-w-4xl mx-auto px-6 py-16 text-center" data-aos="fade-down">
+  <h2 class="text-4xl font-bold text-green-400 mb-4">Get in Touch</h2>
+  <p class="text-green-200 text-lg max-w-xl mx-auto">
+    We'd love to hear from you! Fill out the form below or reach us directly at our email.
+  </p>
+</section>
 
-  <!-- Contact Form + Info + Map -->
-  <section class="max-w-6xl mx-auto px-6 pb-20 grid grid-cols-1 md:grid-cols-2 gap-12">
+<!-- Contact Form + Info + Map -->
+<section class="max-w-6xl mx-auto px-6 pb-20 grid grid-cols-1 md:grid-cols-2 gap-12">
 
-    <!-- Contact Form -->
-    <form
-      action="https://formspree.io/f/mayvnyla" 
-      method="POST"
-      class="bg-[#121212] rounded-lg shadow-lg p-8 flex flex-col gap-6"
-      data-aos="fade-right"
-    >
+  <!-- Contact Form -->
+  <div id="contact-section" class="bg-[#121212] rounded-lg shadow-lg p-8 flex flex-col gap-6" data-aos="fade-right">
+    <form id="contactForm" class="flex flex-col gap-6">
       <label class="flex flex-col text-green-300 font-semibold">
         Name
-        <input
-          type="text"
-          name="name"
-          placeholder="Your full name"
-          required
-          class="mt-2 p-3 rounded"
-        />
+        <input type="text" name="name" placeholder="Your full name" required class="mt-2 p-3 rounded" />
       </label>
 
       <label class="flex flex-col text-green-300 font-semibold">
         Email
-        <input
-          type="email"
-          name="_replyto"
-          placeholder="you@example.com"
-          required
-          class="mt-2 p-3 rounded"
-        />
+        <input type="email" name="email" placeholder="you@example.com" required class="mt-2 p-3 rounded" />
       </label>
 
       <label class="flex flex-col text-green-300 font-semibold">
         Subject
-        <input
-          type="text"
-          name="subject"
-          placeholder="Subject"
-          class="mt-2 p-3 rounded"
-        />
+        <input type="text" name="subject" placeholder="Subject" class="mt-2 p-3 rounded" />
       </label>
 
       <label class="flex flex-col text-green-300 font-semibold">
         Message
-        <textarea
-          name="message"
-          placeholder="Write your message here..."
-          rows="5"
-          required
-          class="mt-2 p-3 rounded resize-y"
-        ></textarea>
+        <textarea name="message" placeholder="Write your message here..." rows="5" required class="mt-2 p-3 rounded resize-y"></textarea>
       </label>
 
-      <button
-        type="submit"
-        class="bg-green-500 hover:bg-green-600 transition text-black font-bold py-3 rounded"
-      >
+      <button type="submit" class="bg-green-500 hover:bg-green-600 transition text-black font-bold py-3 rounded">
         Send Message
       </button>
     </form>
 
-    <!-- Contact Info + Map -->
-    <div class="flex flex-col gap-8" data-aos="fade-left">
+    <!-- Success Message -->
+    <div id="successMessage" class="hidden text-center text-green-400 text-xl font-semibold mt-6">
+      ✅ Message Received! Thank you for reaching out.
+    </div>
+  </div>
 
-      <!-- Email address -->
-      <div class="bg-[#121212] rounded-lg shadow-lg p-6">
-        <h3 class="text-2xl font-bold text-green-400 mb-3">Email Us</h3>
-        <p class="text-green-200 text-lg">sampangmichaela41@gmail.com</p>
-        <p class="text-green-200 text-lg">+63 930 929 7645</p>
-        <p class="text-green-200 text-lg">Sitio Bana, Dolores, Mabalacat, Pampanga, Philippines</p>
-      </div>
-
-      <!-- Google Map Embed -->
-      <div class="rounded-lg overflow-hidden shadow-lg">
-        <iframe
-          class="w-full h-64 md:h-80"
-          src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d15424.517021901215!2d120.561569!3d15.237153!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMTXCsDE0JzEzLjgiTiAxMjDCsDMzJzQxLjYiRQ!5e0!3m2!1sen!2sph!4v1713347580480!5m2!1sen!2sph"
-          allowfullscreen=""
-          loading="lazy"
-          referrerpolicy="no-referrer-when-downgrade"
-          title="ACTIVION Studios Location"
-        ></iframe>
-      </div>
-
+  <!-- Contact Info + Map -->
+  <div class="flex flex-col gap-8" data-aos="fade-left">
+    <div class="bg-[#121212] rounded-lg shadow-lg p-6">
+      <h3 class="text-2xl font-bold text-green-400 mb-3">Email Us</h3>
+      <p class="text-green-200 text-lg">sampangmichaela41@gmail.com</p>
+      <p class="text-green-200 text-lg">+63 930 929 7645</p>
+      <p class="text-green-200 text-lg">Sitio Bana, Dolores, Mabalacat, Pampanga, Philippines</p>
     </div>
 
-  </section>
-
-  <!-- Footer -->
-  <footer class="bg-green-600 text-black py-6 mt-16">
-    <div class="text-center font-semibold max-w-7xl mx-auto">
-      &copy; 2025 ACTIVION Studios. All rights reserved.
+    <div class="rounded-lg overflow-hidden shadow-lg">
+      <iframe
+        class="w-full h-64 md:h-80"
+        src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d15424.517021901215!2d120.561569!3d15.237153!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMTXCsDE0JzEzLjgiTiAxMjDCsDMzJzQxLjYiRQ!5e0!3m2!1sen!2sph!4v1713347580480!5m2!1sen!2sph"
+        allowfullscreen=""
+        loading="lazy"
+        referrerpolicy="no-referrer-when-downgrade"
+        title="ACTIVION Studios Location"
+      ></iframe>
     </div>
-  </footer>
+  </div>
+</section>
 
-  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-  <script>
-    AOS.init();
-  </script>
+<!-- Footer -->
+<footer class="bg-green-600 text-black py-6 mt-16">
+  <div class="text-center font-semibold max-w-7xl mx-auto">
+    &copy; 2025 ACTIVION Studios. All rights reserved.
+  </div>
+</footer>
+
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script>
+  AOS.init();
+
+  // Message confirmation (no email sent)
+  document.getElementById("contactForm").addEventListener("submit", function (e) {
+    e.preventDefault(); // Prevent actual submission
+    document.getElementById("contactForm").classList.add("hidden");
+    document.getElementById("successMessage").classList.remove("hidden");
+  });
+</script>
 
 </body>
 </html>
