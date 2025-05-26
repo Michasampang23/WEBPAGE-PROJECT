@@ -1,0 +1,411 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Shop - ACTIVION Studios</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+  <style>
+    body {
+      background-color: #0d0d0d;
+    }
+    /* Modal styles */
+    .modal {
+      display: none;
+      position: fixed;
+      z-index: 1000;
+      left: 0; top: 0; width: 100%; height: 100%;
+      background-color: rgba(0,0,0,0.7);
+      justify-content: center;
+      align-items: center;
+      padding: 1rem;
+    }
+    .modal.active {
+      display: flex;
+    }
+  </style>
+</head>
+<body class="text-white font-sans">
+
+<!-- Navbar -->
+  <header class="bg-green-600 shadow-md sticky top-0 z-50">
+    <div class="max-w-7xl mx-auto flex justify-between items-center px-6 py-4">
+      <h1 class="text-3xl font-extrabold text-black tracking-tight">ACTIVION Studios</h1>
+      <nav>
+        <ul class="flex flex-wrap gap-4 text-white font-semibold">
+          <li><a href="homepage.html" class="hover:text-black transition">Home</a></li>
+          <li><a href="about.html" class="hover:text-black transition">About</a></li>
+          <li><a href="gallery.html" class="hover:text-black transition font-bold underline">Shop</a></li>
+          <li><a href="mission-vision.html" class="hover:text-black transition">Mission</a></li>
+          <li><a href="services.html" class="hover:text-black transition">Services</a></li>
+          <li><a href="testimonials.html" class="hover:text-black transition">Testimonials</a></li>
+          <li><a href="contact.html" class="hover:text-black transition">Contact</a></li>
+          <li><a href="blog.html" class="hover:text-black transition">Blog</a></li>
+          <li><a href="faq.html" class="hover:text-black transition">FAQ</a></li>
+          <li><a href="profile.html" class="hover:text-black transition">Profile</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Hero -->
+  <section class="bg-gradient-to-br from-black via-gray-900 to-green-800 py-20 text-green-300 text-center" data-aos="fade-down">
+    <h2 class="text-5xl font-bold mb-4">Shop Our PCs</h2>
+    <p class="max-w-2xl mx-auto text-lg">Powerful, stylish, and ready to elevate your gaming or work experience.</p>
+  </section>
+
+ <!-- Cart Summary -->
+  <section class="max-w-7xl mx-auto px-6 mt-10 mb-6">
+    <h3 class="text-2xl font-bold text-green-400 mb-4">Your Cart</h3>
+    <div id="cart-items" class="bg-[#121212] rounded-lg p-4 min-h-[100px] text-gray-400">
+      Your cart is empty.
+    </div>
+    <div class="text-right mt-4 text-green-300 font-semibold" id="cart-total"></div>
+    <div class="flex justify-end gap-4 mt-4">
+      <button id="clear-cart" class="px-4 py-2 bg-red-600 hover:bg-red-700 rounded text-black font-bold transition hidden">Clear Cart</button>
+      <button id="checkout-btn" class="px-6 py-3 bg-green-700 rounded font-bold text-black transition hover:bg-green-800 hidden">Checkout</button>
+    </div>
+  </section>
+
+  <section class="max-w-7xl mx-auto px-6 mt-10">
+  <input
+    type="text"
+    id="product-search"
+    placeholder="Search product..."
+    class="w-full p-3 rounded bg-[#1a1a1a] text-white placeholder-gray-400 border border-green-600 focus:outline-none focus:ring-2 focus:ring-green-400"
+  />
+</section><br>
+
+  <!-- Products Grid -->
+  <section class="max-w-7xl mx-auto px-6 py-16 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-10">
+
+    <!-- Product 1 -->
+<article class="bg-[#121212] rounded-lg shadow-lg hover:shadow-green-500 transition" data-aos="zoom-in" data-aos-delay="100" data-id="1" data-name="ACTIVION Core X100" data-price="25999">
+  <img src="Desktops (1).jpeg" alt="ACTIVION Core X100" class="rounded-t-lg w-full object-cover h-44" />
+  <div class="p-6">
+    <h3 class="text-green-400 font-semibold text-xl mb-2">ACTIVION Core X100</h3>
+    <ul class="list-disc list-inside text-gray-400 mb-4 space-y-1">
+      <li>Intel Core i5-10400 (10th Gen)</li>
+      <li>8GB DDR4 RAM</li>
+      <li>512GB SSD</li>
+      <li>Intel UHD 630 Integrated Graphics</li>
+      <li>No RGB lighting – sleek matte design</li>
+      <li>Home and office productivity</li>
+    </ul>
+    <div class="flex justify-between items-center gap-2">
+      <span class="text-green-300 font-bold text-lg">₱25,999</span>
+      <button class="add-to-cart-btn bg-green-600 hover:bg-green-700 text-black font-bold px-4 py-2 rounded transition flex-1">Add to Cart</button>
+      <button class="order-now-btn bg-black hover:bg-green-500 border border-green-600 text-green-400 font-bold px-4 py-2 rounded transition flex-1" disabled>Order Now</button>
+    </div>
+  </div>
+</article>
+
+<!-- Product 2 -->
+<article class="bg-[#121212] rounded-lg shadow-lg hover:shadow-green-500 transition" data-aos="zoom-in" data-aos-delay="150" data-id="2" data-name="ACTIVION Elite Pro 5" data-price="32499">
+  <img src="Desktops (2).jpg" alt="ACTIVION Elite Pro 5" class="rounded-t-lg w-full object-cover h-44" />
+  <div class="p-6">
+    <h3 class="text-green-400 font-semibold text-xl mb-2">ACTIVION Elite Pro 5</h3>
+    <ul class="list-disc list-inside text-gray-400 mb-4 space-y-1">
+      <li>Intel Core i7-11700</li>
+      <li>16GB DDR4 RAM</li>
+      <li>1TB HDD + 256GB SSD</li>
+      <li>NVIDIA GeForce GTX 1650 4GB</li>
+      <li>Subtle RGB front panel</li>
+      <li>Creative professionals & multitasking</li>
+    </ul>
+    <div class="flex justify-between items-center gap-2">
+      <span class="text-green-300 font-bold text-lg">₱32,499</span>
+      <button class="add-to-cart-btn bg-green-600 hover:bg-green-700 text-black font-bold px-4 py-2 rounded transition flex-1">Add to Cart</button>
+      <button class="order-now-btn bg-black hover:bg-green-500 border border-green-600 text-green-400 font-bold px-4 py-2 rounded transition flex-1" disabled>Order Now</button>
+    </div>
+  </div>
+</article>
+
+<!-- Product 3 -->
+<article class="bg-[#121212] rounded-lg shadow-lg hover:shadow-green-500 transition" data-aos="zoom-in" data-aos-delay="200" data-id="3" data-name="ACTIVION WorkMate i5" data-price="28250">
+  <img src="Desktops (3).jpg" alt="ACTIVION WorkMate i5" class="rounded-t-lg w-full object-cover h-44" />
+  <div class="p-6">
+    <h3 class="text-green-400 font-semibold text-xl mb-2">ACTIVION WorkMate i5</h3>
+    <ul class="list-disc list-inside text-gray-400 mb-4 space-y-1">
+      <li>Intel Core i5-12400</li>
+      <li>16GB DDR4 RAM</li>
+      <li>512GB NVMe SSD</li>
+      <li>Intel UHD 730 Integrated Graphics</li>
+      <li>Minimalist design (no RGB)</li>
+      <li>Perfect for office & meetings</li>
+    </ul>
+    <div class="flex justify-between items-center gap-2">
+      <span class="text-green-300 font-bold text-lg">₱28,250</span>
+      <button class="add-to-cart-btn bg-green-600 hover:bg-green-700 text-black font-bold px-4 py-2 rounded transition flex-1">Add to Cart</button>
+      <button class="order-now-btn bg-black hover:bg-green-500 border border-green-600 text-green-400 font-bold px-4 py-2 rounded transition flex-1" disabled>Order Now</button>
+    </div>
+  </div>
+</article>
+
+<!-- Product 4 -->
+<article class="bg-[#121212] rounded-lg shadow-lg hover:shadow-green-500 transition" data-aos="zoom-in" data-aos-delay="250" data-id="4" data-name="ACTIVION Gaming Beast X7" data-price="45999">
+  <img src="Desktops (4).jpg" alt="ACTIVION Gaming Beast X7" class="rounded-t-lg w-full object-cover h-44" />
+  <div class="p-6">
+    <h3 class="text-green-400 font-semibold text-xl mb-2">ACTIVION Gaming Beast X7</h3>
+    <ul class="list-disc list-inside text-gray-400 mb-4 space-y-1">
+      <li>AMD Ryzen 7 5800X</li>
+      <li>32GB DDR4 RAM</li>
+      <li>1TB NVMe SSD</li>
+      <li>NVIDIA RTX 3060 Ti 8GB</li>
+      <li>Full RGB lighting (fans & case)</li>
+      <li>High-end gaming & streaming</li>
+    </ul>
+    <div class="flex justify-between items-center gap-2">
+      <span class="text-green-300 font-bold text-lg">₱45,999</span>
+      <button class="add-to-cart-btn bg-green-600 hover:bg-green-700 text-black font-bold px-4 py-2 rounded transition flex-1">Add to Cart</button>
+      <button class="order-now-btn bg-black hover:bg-green-500 border border-green-600 text-green-400 font-bold px-4 py-2 rounded transition flex-1" disabled>Order Now</button>
+    </div>
+  </div>
+</article>
+
+<!-- Product 5 -->
+<article class="bg-[#121212] rounded-lg shadow-lg hover:shadow-green-500 transition" data-aos="zoom-in" data-aos-delay="300" data-id="5" data-name="ACTIVION Office Lite" data-price="19800">
+  <img src="Desktops (5).jpg" alt="ACTIVION Office Lite" class="rounded-t-lg w-full object-cover h-44" />
+  <div class="p-6">
+    <h3 class="text-green-400 font-semibold text-xl mb-2">ACTIVION Office Lite</h3>
+    <ul class="list-disc list-inside text-gray-400 mb-4 space-y-1">
+      <li>Intel Core i3-10100</li>
+      <li>8GB DDR4 RAM</li>
+      <li>256GB SSD</li>
+      <li>Intel UHD 630 Integrated Graphics</li>
+      <li>No RGB – compact design</li>
+      <li>Budget-friendly office PC</li>
+    </ul>
+    <div class="flex justify-between items-center gap-2">
+      <span class="text-green-300 font-bold text-lg">₱19,800</span>
+      <button class="add-to-cart-btn bg-green-600 hover:bg-green-700 text-black font-bold px-4 py-2 rounded transition flex-1">Add to Cart</button>
+      <button class="order-now-btn bg-black hover:bg-green-500 border border-green-600 text-green-400 font-bold px-4 py-2 rounded transition flex-1" disabled>Order Now</button>
+    </div>
+  </div>
+</article>
+
+<!-- Product 6 -->
+<article class="bg-[#121212] rounded-lg shadow-lg hover:shadow-green-500 transition" data-aos="zoom-in" data-aos-delay="350" data-id="6" data-name="ACTIVION Studio Creator PC" data-price="36750">
+  <img src="Desktops (6).jpg" alt="ACTIVION Studio Creator PC" class="rounded-t-lg w-full object-cover h-44" />
+  <div class="p-6">
+    <h3 class="text-green-400 font-semibold text-xl mb-2">ACTIVION Studio Creator PC</h3>
+    <ul class="list-disc list-inside text-gray-400 mb-4 space-y-1">
+      <li>AMD Ryzen 5 5600G</li>
+      <li>16GB DDR4 RAM</li>
+      <li>1TB HDD + 512GB SSD</li>
+      <li>Radeon Vega 7 Integrated</li>
+      <li>Side glass panel + RGB fans</li>
+      <li>Great for editing & design</li>
+    </ul>
+    <div class="flex justify-between items-center gap-2">
+      <span class="text-green-300 font-bold text-lg">₱36,750</span>
+      <button class="add-to-cart-btn bg-green-600 hover:bg-green-700 text-black font-bold px-4 py-2 rounded transition flex-1">Add to Cart</button>
+      <button class="order-now-btn bg-black hover:bg-green-500 border border-green-600 text-green-400 font-bold px-4 py-2 rounded transition flex-1" disabled>Order Now</button>
+    </div>
+  </div>
+</article>
+
+<!-- Product 7 -->
+<article class="bg-[#121212] rounded-lg shadow-lg hover:shadow-green-500 transition" data-aos="zoom-in" data-aos-delay="400" data-id="7" data-name="ACTIVION Ultra SlimBox" data-price="23499">
+  <img src="Desktops (7).jpg" alt="ACTIVION Ultra SlimBox" class="rounded-t-lg w-full object-cover h-44" />
+  <div class="p-6">
+    <h3 class="text-green-400 font-semibold text-xl mb-2">ACTIVION Ultra SlimBox</h3>
+    <ul class="list-disc list-inside text-gray-400 mb-4 space-y-1">
+      <li>Intel Core i5-11400</li>
+      <li>8GB DDR4 RAM</li>
+      <li>512GB SSD</li>
+      <li>Intel UHD 730 Integrated Graphics</li>
+      <li>Minimal LED accents</li>
+      <li>Space-saving office setup</li>
+    </ul>
+    <div class="flex justify-between items-center gap-2">
+      <span class="text-green-300 font-bold text-lg">₱23,499</span>
+      <button class="add-to-cart-btn bg-green-600 hover:bg-green-700 text-black font-bold px-4 py-2 rounded transition flex-1">Add to Cart</button>
+      <button class="order-now-btn bg-black hover:bg-green-500 border border-green-600 text-green-400 font-bold px-4 py-2 rounded transition flex-1" disabled>Order Now</button>
+    </div>
+  </div>
+</article>
+
+<!-- Product 8 -->
+<article class="bg-[#121212] rounded-lg shadow-lg hover:shadow-green-500 transition" data-aos="zoom-in" data-aos-delay="450" data-id="8" data-name="ACTIVION Ryzen PowerStation" data-price="39999">
+  <img src="Desktops (8).webp" alt="ACTIVION Ryzen PowerStation" class="rounded-t-lg w-full object-cover h-44" />
+  <div class="p-6">
+    <h3 class="text-green-400 font-semibold text-xl mb-2">ACTIVION Ryzen PowerStation</h3>
+    <ul class="list-disc list-inside text-gray-400 mb-4 space-y-1">
+      <li>AMD Ryzen 7 5700G</li>
+      <li>32GB DDR4 RAM</li>
+      <li>1TB SSD</li>
+      <li>NVIDIA RTX 3050 8GB</li>
+      <li>RGB front panel + interior</li>
+      <li>Gaming & content creation</li>
+    </ul>
+    <div class="flex justify-between items-center gap-2">
+      <span class="text-green-300 font-bold text-lg">₱39,999</span>
+      <button class="add-to-cart-btn bg-green-600 hover:bg-green-700 text-black font-bold px-4 py-2 rounded transition flex-1">Add to Cart</button>
+      <button class="order-now-btn bg-black hover:bg-green-500 border border-green-600 text-green-400 font-bold px-4 py-2 rounded transition flex-1" disabled>Order Now</button>
+    </div>
+  </div>
+</article>
+
+
+  </section>
+
+  <!-- Footer -->
+  <footer class="bg-green-600 text-black py-6 mt-10">
+    <div class="text-center font-semibold">
+      &copy; 2025 ACTIVION Studios. Empowering your digital lifestyle.
+    </div>
+  </footer>
+
+  <!-- Order Modal -->
+  <div id="order-modal" class="modal">
+    <div class="bg-[#121212] p-6 rounded-lg max-w-md w-full text-white relative">
+      <button id="modal-close" class="absolute top-2 right-2 text-green-400 font-bold text-xl hover:text-green-600">&times;</button>
+      <h3 class="text-2xl font-bold mb-4">Confirm Your Order</h3>
+      <div id="order-product-name" class="mb-2 whitespace-pre-line"></div>
+      <div id="order-product-price" class="mb-4"></div>
+      <button id="confirm-purchase" class="w-full bg-green-600 hover:bg-green-700 text-black font-bold py-3 rounded transition">Confirm Purchase</button>
+    </div>
+  </div>
+
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script>
+    AOS.init();
+
+    document.getElementById("product-search").addEventListener("input", function () {
+    const searchTerm = this.value.toLowerCase();
+    const productCards = document.querySelectorAll("section.grid article");
+
+    productCards.forEach(card => {
+      const productName = card.querySelector("h3")?.textContent.toLowerCase() || "";
+      if (productName.includes(searchTerm)) {
+        card.style.opacity = "1";
+        card.style.visibility = "visible";
+        card.style.pointerEvents = "auto";
+        card.style.transition = "opacity 0.3s ease";
+      } else {
+        card.style.opacity = "0";
+        card.style.visibility = "hidden";
+        card.style.pointerEvents = "none";
+        card.style.transition = "opacity 0.3s ease";
+      }
+    });
+  });
+
+  // Load cart from localStorage
+  let cart = JSON.parse(localStorage.getItem('cart')) || [];
+
+  // Get elements if they exist on this page
+  const cartItemsDiv = document.getElementById('cart-items');
+  const cartTotalDiv = document.getElementById('cart-total');
+  const clearCartBtn = document.getElementById('clear-cart');
+  const checkoutBtn = document.getElementById('checkout-btn');
+  const modal = document.getElementById('order-modal');
+  const modalClose = document.getElementById('modal-close');
+  const orderProductName = document.getElementById('order-product-name');
+  const orderProductPrice = document.getElementById('order-product-price');
+  const confirmPurchaseBtn = document.getElementById('confirm-purchase');
+
+  // Save cart
+  function saveCart() {
+    localStorage.setItem('cart', JSON.stringify(cart));
+  }
+
+  // Update cart UI
+  function updateCartDisplay() {
+    if (!cartItemsDiv) return;
+
+    if (cart.length === 0) {
+      cartItemsDiv.innerHTML = '<p class="text-white">Your cart is empty.</p>';
+      if (cartTotalDiv) cartTotalDiv.textContent = '';
+      if (clearCartBtn) clearCartBtn.classList.add('hidden');
+      if (checkoutBtn) checkoutBtn.classList.add('hidden');
+    } else {
+      cartItemsDiv.innerHTML = '';
+      let total = 0;
+
+      cart.forEach(item => {
+        total += item.price * item.quantity;
+        const div = document.createElement('div');
+        div.className = 'bg-white text-black p-4 my-2 rounded shadow';
+        div.innerHTML = `
+          <h4>${item.name}</h4>
+          <p>₱${item.price} x ${item.quantity}</p>
+          <p>Total: ₱${(item.price * item.quantity).toFixed(2)}</p>
+        `;
+        cartItemsDiv.appendChild(div);
+      });
+
+      if (cartTotalDiv) {
+        cartTotalDiv.innerHTML = `<div class="text-white mt-4 font-bold">Cart Total: ₱${total.toFixed(2)}</div>`;
+      }
+
+      if (clearCartBtn) clearCartBtn.classList.remove('hidden');
+      if (checkoutBtn) checkoutBtn.classList.remove('hidden');
+    }
+  }
+
+  // Add to cart
+  document.querySelectorAll('.add-to-cart-btn').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const article = btn.closest('article');
+      const id = article.getAttribute('data-id');
+      const name = article.getAttribute('data-name');
+      const price = parseFloat(article.getAttribute('data-price'));
+
+      const existing = cart.find(item => item.id === id);
+      if (existing) {
+        existing.quantity++;
+      } else {
+        cart.push({ id, name, price, quantity: 1 });
+      }
+
+      saveCart();
+      updateCartDisplay();
+    });
+  });
+
+  // Clear cart
+  if (clearCartBtn) {
+    clearCartBtn.addEventListener('click', () => {
+      if (confirm('Clear all items from your cart?')) {
+        cart = [];
+        saveCart();
+        updateCartDisplay();
+      }
+    });
+  }
+
+  // Checkout button (if exists)
+  if (checkoutBtn && modal && orderProductName && orderProductPrice) {
+    checkoutBtn.addEventListener('click', () => {
+      if (cart.length === 0) return;
+
+      orderProductName.innerHTML = '<strong>Order Summary:</strong><br>' +
+        cart.map(item => `${item.name} x${item.quantity} - ₱${(item.price * item.quantity).toFixed(2)}`).join('<br>');
+
+      const total = cart.reduce((sum, item) => sum + item.price * item.quantity, 0);
+      orderProductPrice.innerHTML = `<strong>Total Price:</strong> ₱${total.toFixed(2)}`;
+
+      modal.classList.add('active');
+    });
+
+    modalClose?.addEventListener('click', () => {
+      modal.classList.remove('active');
+    });
+
+    confirmPurchaseBtn?.addEventListener('click', () => {
+      alert('Thank you for your purchase!');
+      cart = [];
+      saveCart();
+      updateCartDisplay();
+      modal.classList.remove('active');
+    });
+  }
+
+  // Initial load
+  updateCartDisplay();
+  </script>
+</body>
+</html>

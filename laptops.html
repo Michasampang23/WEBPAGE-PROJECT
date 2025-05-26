@@ -1,0 +1,395 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Shop - ACTIVION Studios</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+  <style>
+    body {
+      background-color: #0d0d0d;
+    }
+    /* Modal styles */
+    .modal {
+      display: none;
+      position: fixed;
+      z-index: 1000;
+      left: 0; top: 0; width: 100%; height: 100%;
+      background-color: rgba(0,0,0,0.7);
+      justify-content: center;
+      align-items: center;
+      padding: 1rem;
+    }
+    .modal.active {
+      display: flex;
+    }
+  </style>
+</head>
+<body class="text-white font-sans">
+
+<!-- Navbar -->
+  <header class="bg-green-600 shadow-md sticky top-0 z-50">
+    <div class="max-w-7xl mx-auto flex justify-between items-center px-6 py-4">
+      <h1 class="text-3xl font-extrabold text-black tracking-tight">ACTIVION Studios</h1>
+      <nav>
+        <ul class="flex flex-wrap gap-4 text-white font-semibold">
+          <li><a href="homepage.html" class="hover:text-black transition">Home</a></li>
+          <li><a href="about.html" class="hover:text-black transition">About</a></li>
+          <li><a href="gallery.html" class="hover:text-black transition font-bold underline">Shop</a></li>
+          <li><a href="mission-vision.html" class="hover:text-black transition">Mission</a></li>
+          <li><a href="services.html" class="hover:text-black transition">Services</a></li>
+          <li><a href="testimonials.html" class="hover:text-black transition">Testimonials</a></li>
+          <li><a href="contact.html" class="hover:text-black transition">Contact</a></li>
+          <li><a href="blog.html" class="hover:text-black transition">Blog</a></li>
+          <li><a href="faq.html" class="hover:text-black transition">FAQ</a></li>
+          <li><a href="profile.html" class="hover:text-black transition">Profile</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+ <!-- Cart Summary -->
+  <section class="max-w-7xl mx-auto px-6 mt-10 mb-6">
+    <h3 class="text-2xl font-bold text-green-400 mb-4">Your Cart</h3>
+    <div id="cart-items" class="bg-[#121212] rounded-lg p-4 min-h-[100px] text-gray-400">
+      Your cart is empty.
+    </div>
+    <div class="text-right mt-4 text-green-300 font-semibold" id="cart-total"></div>
+    <div class="flex justify-end gap-4 mt-4">
+      <button id="clear-cart" class="px-4 py-2 bg-red-600 hover:bg-red-700 rounded text-black font-bold transition hidden">Clear Cart</button>
+      <button id="checkout-btn" class="px-6 py-3 bg-green-700 rounded font-bold text-black transition hover:bg-green-800 hidden">Checkout</button>
+    </div>
+  </section>
+
+  <section class="max-w-7xl mx-auto px-6 mt-10">
+  <input
+    type="text"
+    id="product-search"
+    placeholder="Search product..."
+    class="w-full p-3 rounded bg-[#1a1a1a] text-white placeholder-gray-400 border border-green-600 focus:outline-none focus:ring-2 focus:ring-green-400"
+  />
+</section><br>
+
+  <!-- Products Grid -->
+  <section class="max-w-7xl mx-auto px-6 py-16 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-10">
+
+    <!-- Laptop 1 -->
+<article class="bg-[#121212] rounded-lg shadow-lg hover:shadow-green-500 transition" data-aos="zoom-in" data-aos-delay="100" data-id="201" data-name="UltraSlim Laptop X1" data-price="45000">
+  <img src="shopping (1).webp" alt="UltraSlim Laptop X1" class="rounded-t-lg w-full object-cover h-44" />
+  <div class="p-6">
+    <h3 class="text-green-400 font-semibold text-xl mb-2">UltraSlim Laptop X1</h3>
+    <ul class="text-gray-400 mb-4 list-disc list-inside space-y-1">
+      <li>Lightweight laptop</li>
+      <li>Intel i7 processor</li>
+      <li>16GB RAM</li>
+      <li>512GB SSD</li>
+      <li>Perfect for professionals</li>
+    </ul>
+    <div class="flex justify-between items-center gap-2">
+      <span class="text-green-300 font-bold text-lg">₱45,000</span>
+      <button class="add-to-cart-btn bg-green-600 hover:bg-green-700 text-black font-bold px-4 py-2 rounded transition flex-1">Add to Cart</button>
+      <button class="order-now-btn bg-black hover:bg-green-500 border border-green-600 text-green-400 font-bold px-4 py-2 rounded transition flex-1" disabled>Order Now</button>
+    </div>
+  </div>
+</article>
+
+<!-- Laptop 2 -->
+<article class="bg-[#121212] rounded-lg shadow-lg hover:shadow-green-500 transition" data-aos="zoom-in" data-aos-delay="200" data-id="202" data-name="Gaming Pro 15" data-price="72000">
+  <img src="shopping (2).webp" alt="Gaming Pro 15" class="rounded-t-lg w-full object-cover h-44" />
+  <div class="p-6">
+    <h3 class="text-green-400 font-semibold text-xl mb-2">Gaming Pro 15</h3>
+    <ul class="text-gray-400 mb-4 list-disc list-inside space-y-1">
+      <li>High-performance gaming laptop</li>
+      <li>NVIDIA RTX 3060 GPU</li>
+      <li>16GB RAM</li>
+      <li>1TB SSD</li>
+    </ul>
+    <div class="flex justify-between items-center gap-2">
+      <span class="text-green-300 font-bold text-lg">₱72,000</span>
+      <button class="add-to-cart-btn bg-green-600 hover:bg-green-700 text-black font-bold px-4 py-2 rounded transition flex-1">Add to Cart</button>
+      <button class="order-now-btn bg-black hover:bg-green-500 border border-green-600 text-green-400 font-bold px-4 py-2 rounded transition flex-1" disabled>Order Now</button>
+    </div>
+  </div>
+</article>
+
+<!-- Laptop 3 -->
+<article class="bg-[#121212] rounded-lg shadow-lg hover:shadow-green-500 transition" data-aos="zoom-in" data-aos-delay="300" data-id="203" data-name="WorkMate 14" data-price="38000">
+  <img src="shopping (3).webp " alt="WorkMate 14" class="rounded-t-lg w-full object-cover h-44" />
+  <div class="p-6">
+    <h3 class="text-green-400 font-semibold text-xl mb-2">WorkMate 14</h3>
+    <ul class="text-gray-400 mb-4 list-disc list-inside space-y-1">
+      <li>Compact 14" laptop</li>
+      <li>AMD Ryzen 5 processor</li>
+      <li>8GB RAM</li>
+      <li>256GB SSD</li>
+      <li>Ideal for office tasks</li>
+    </ul>
+    <div class="flex justify-between items-center gap-2">
+      <span class="text-green-300 font-bold text-lg">₱38,000</span>
+      <button class="add-to-cart-btn bg-green-600 hover:bg-green-700 text-black font-bold px-4 py-2 rounded transition flex-1">Add to Cart</button>
+      <button class="order-now-btn bg-black hover:bg-green-500 border border-green-600 text-green-400 font-bold px-4 py-2 rounded transition flex-1" disabled>Order Now</button>
+    </div>
+  </div>
+</article>
+
+<!-- Laptop 4 -->
+<article class="bg-[#121212] rounded-lg shadow-lg hover:shadow-green-500 transition" data-aos="zoom-in" data-aos-delay="400" data-id="204" data-name="Convertible Flex 360" data-price="55000">
+  <img src="shopping (4).webp" alt="Convertible Flex 360" class="rounded-t-lg w-full object-cover h-44" />
+  <div class="p-6">
+    <h3 class="text-green-400 font-semibold text-xl mb-2">Convertible Flex 360</h3>
+    <ul class="text-gray-400 mb-4 list-disc list-inside space-y-1">
+      <li>2-in-1 laptop with touchscreen</li>
+      <li>Intel i5 processor</li>
+      <li>8GB RAM</li>
+      <li>512GB SSD</li>
+      <li>Perfect for creatives</li>
+    </ul>
+    <div class="flex justify-between items-center gap-2">
+      <span class="text-green-300 font-bold text-lg">₱55,000</span>
+      <button class="add-to-cart-btn bg-green-600 hover:bg-green-700 text-black font-bold px-4 py-2 rounded transition flex-1">Add to Cart</button>
+      <button class="order-now-btn bg-black hover:bg-green-500 border border-green-600 text-green-400 font-bold px-4 py-2 rounded transition flex-1" disabled>Order Now</button>
+    </div>
+  </div>
+</article>
+
+<!-- Laptop 5 -->
+<article class="bg-[#121212] rounded-lg shadow-lg hover:shadow-green-500 transition" data-aos="zoom-in" data-aos-delay="500" data-id="205" data-name="BudgetBook 13" data-price="25000">
+  <img src="shopping (5).webp" alt="BudgetBook 13" class="rounded-t-lg w-full object-cover h-44" />
+  <div class="p-6">
+    <h3 class="text-green-400 font-semibold text-xl mb-2">BudgetBook 13</h3>
+    <ul class="text-gray-400 mb-4 list-disc list-inside space-y-1">
+      <li>Affordable 13-inch laptop</li>
+      <li>Intel i3 processor</li>
+      <li>4GB RAM</li>
+      <li>128GB SSD</li>
+      <li>Great for students</li>
+    </ul>
+    <div class="flex justify-between items-center gap-2">
+      <span class="text-green-300 font-bold text-lg">₱25,000</span>
+      <button class="add-to-cart-btn bg-green-600 hover:bg-green-700 text-black font-bold px-4 py-2 rounded transition flex-1">Add to Cart</button>
+      <button class="order-now-btn bg-black hover:bg-green-500 border border-green-600 text-green-400 font-bold px-4 py-2 rounded transition flex-1" disabled>Order Now</button>
+    </div>
+  </div>
+</article>
+
+<!-- Laptop 6 -->
+<article class="bg-[#121212] rounded-lg shadow-lg hover:shadow-green-500 transition" data-aos="zoom-in" data-aos-delay="600" data-id="206" data-name="ProBook 17" data-price="62000">
+  <img src="shopping (6).webp" alt="ProBook 17" class="rounded-t-lg w-full object-cover h-44" />
+  <div class="p-6">
+    <h3 class="text-green-400 font-semibold text-xl mb-2">ProBook 17</h3>
+    <ul class="text-gray-400 mb-4 list-disc list-inside space-y-1">
+      <li>Powerful 17-inch laptop</li>
+      <li>Intel i7 processor</li>
+      <li>16GB RAM</li>
+      <li>1TB SSD</li>
+      <li>Suited for heavy workloads</li>
+    </ul>
+    <div class="flex justify-between items-center gap-2">
+      <span class="text-green-300 font-bold text-lg">₱62,000</span>
+      <button class="add-to-cart-btn bg-green-600 hover:bg-green-700 text-black font-bold px-4 py-2 rounded transition flex-1">Add to Cart</button>
+      <button class="order-now-btn bg-black hover:bg-green-500 border border-green-600 text-green-400 font-bold px-4 py-2 rounded transition flex-1" disabled>Order Now</button>
+    </div>
+  </div>
+</article>
+
+<!-- Laptop 7 -->
+<article class="bg-[#121212] rounded-lg shadow-lg hover:shadow-green-500 transition" data-aos="zoom-in" data-aos-delay="700" data-id="207" data-name="EcoBook Air" data-price="40000">
+  <img src="shopping (7).webp" alt="EcoBook Air" class="rounded-t-lg w-full object-cover h-44" />
+  <div class="p-6">
+    <h3 class="text-green-400 font-semibold text-xl mb-2">EcoBook Air</h3>
+    <ul class="text-gray-400 mb-4 list-disc list-inside space-y-1">
+      <li>Eco-friendly lightweight laptop</li>
+      <li>AMD Ryzen 7 processor</li>
+      <li>8GB RAM</li>
+      <li>256GB SSD</li>
+    </ul>
+    <div class="flex justify-between items-center gap-2">
+      <span class="text-green-300 font-bold text-lg">₱40,000</span>
+      <button class="add-to-cart-btn bg-green-600 hover:bg-green-700 text-black font-bold px-4 py-2 rounded transition flex-1">Add to Cart</button>
+      <button class="order-now-btn bg-black hover:bg-green-500 border border-green-600 text-green-400 font-bold px-4 py-2 rounded transition flex-1" disabled>Order Now</button>
+    </div>
+  </div>
+</article>
+
+<!-- Laptop 8 -->
+<article class="bg-[#121212] rounded-lg shadow-lg hover:shadow-green-500 transition" data-aos="zoom-in" data-aos-delay="800" data-id="208" data-name="Creator Pro 16" data-price="83000">
+  <img src="shopping(8).webp" alt="Creator Pro 16" class="rounded-t-lg w-full object-cover h-44" />
+  <div class="p-6">
+    <h3 class="text-green-400 font-semibold text-xl mb-2">Creator Pro 16</h3>
+    <ul class="text-gray-400 mb-4 list-disc list-inside space-y-1">
+      <li>16-inch creative powerhouse</li>
+      <li>Intel i9 processor</li>
+      <li>32GB RAM</li>
+      <li>1TB SSD</li>
+      <li>Dedicated GPU</li>
+    </ul>
+    <div class="flex justify-between items-center gap-2">
+      <span class="text-green-300 font-bold text-lg">₱83,000</span>
+      <button class="add-to-cart-btn bg-green-600 hover:bg-green-700 text-black font-bold px-4 py-2 rounded transition flex-1">Add to Cart</button>
+      <button class="order-now-btn bg-black hover:bg-green-500 border border-green-600 text-green-400 font-bold px-4 py-2 rounded transition flex-1" disabled>Order Now</button>
+    </div>
+  </div>
+</article>
+
+
+  </section>
+
+  <!-- Footer -->
+  <footer class="bg-green-600 text-black py-6 mt-10">
+    <div class="text-center font-semibold">
+      &copy; 2025 ACTIVION Studios. Empowering your digital lifestyle.
+    </div>
+  </footer>
+
+  <!-- Order Modal -->
+  <div id="order-modal" class="modal">
+    <div class="bg-[#121212] p-6 rounded-lg max-w-md w-full text-white relative">
+      <button id="modal-close" class="absolute top-2 right-2 text-green-400 font-bold text-xl hover:text-green-600">&times;</button>
+      <h3 class="text-2xl font-bold mb-4">Confirm Your Order</h3>
+      <div id="order-product-name" class="mb-2 whitespace-pre-line"></div>
+      <div id="order-product-price" class="mb-4"></div>
+      <button id="confirm-purchase" class="w-full bg-green-600 hover:bg-green-700 text-black font-bold py-3 rounded transition">Confirm Purchase</button>
+    </div>
+  </div>
+
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script>
+    AOS.init();
+
+    document.getElementById("product-search").addEventListener("input", function () {
+    const searchTerm = this.value.toLowerCase();
+    const productCards = document.querySelectorAll("section.grid article");
+
+    productCards.forEach(card => {
+      const productName = card.querySelector("h3")?.textContent.toLowerCase() || "";
+      if (productName.includes(searchTerm)) {
+        card.style.opacity = "1";
+        card.style.visibility = "visible";
+        card.style.pointerEvents = "auto";
+        card.style.transition = "opacity 0.3s ease";
+      } else {
+        card.style.opacity = "0";
+        card.style.visibility = "hidden";
+        card.style.pointerEvents = "none";
+        card.style.transition = "opacity 0.3s ease";
+      }
+    });
+  });
+
+  // Load cart from localStorage
+  let cart = JSON.parse(localStorage.getItem('cart')) || [];
+
+  // Get elements if they exist on this page
+  const cartItemsDiv = document.getElementById('cart-items');
+  const cartTotalDiv = document.getElementById('cart-total');
+  const clearCartBtn = document.getElementById('clear-cart');
+  const checkoutBtn = document.getElementById('checkout-btn');
+  const modal = document.getElementById('order-modal');
+  const modalClose = document.getElementById('modal-close');
+  const orderProductName = document.getElementById('order-product-name');
+  const orderProductPrice = document.getElementById('order-product-price');
+  const confirmPurchaseBtn = document.getElementById('confirm-purchase');
+
+  // Save cart
+  function saveCart() {
+    localStorage.setItem('cart', JSON.stringify(cart));
+  }
+
+  // Update cart UI
+  function updateCartDisplay() {
+    if (!cartItemsDiv) return;
+
+    if (cart.length === 0) {
+      cartItemsDiv.innerHTML = '<p class="text-white">Your cart is empty.</p>';
+      if (cartTotalDiv) cartTotalDiv.textContent = '';
+      if (clearCartBtn) clearCartBtn.classList.add('hidden');
+      if (checkoutBtn) checkoutBtn.classList.add('hidden');
+    } else {
+      cartItemsDiv.innerHTML = '';
+      let total = 0;
+
+      cart.forEach(item => {
+        total += item.price * item.quantity;
+        const div = document.createElement('div');
+        div.className = 'bg-white text-black p-4 my-2 rounded shadow';
+        div.innerHTML = `
+          <h4>${item.name}</h4>
+          <p>₱${item.price} x ${item.quantity}</p>
+          <p>Total: ₱${(item.price * item.quantity).toFixed(2)}</p>
+        `;
+        cartItemsDiv.appendChild(div);
+      });
+
+      if (cartTotalDiv) {
+        cartTotalDiv.innerHTML = `<div class="text-white mt-4 font-bold">Cart Total: ₱${total.toFixed(2)}</div>`;
+      }
+
+      if (clearCartBtn) clearCartBtn.classList.remove('hidden');
+      if (checkoutBtn) checkoutBtn.classList.remove('hidden');
+    }
+  }
+
+  // Add to cart
+  document.querySelectorAll('.add-to-cart-btn').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const article = btn.closest('article');
+      const id = article.getAttribute('data-id');
+      const name = article.getAttribute('data-name');
+      const price = parseFloat(article.getAttribute('data-price'));
+
+      const existing = cart.find(item => item.id === id);
+      if (existing) {
+        existing.quantity++;
+      } else {
+        cart.push({ id, name, price, quantity: 1 });
+      }
+
+      saveCart();
+      updateCartDisplay();
+    });
+  });
+
+  // Clear cart
+  if (clearCartBtn) {
+    clearCartBtn.addEventListener('click', () => {
+      if (confirm('Clear all items from your cart?')) {
+        cart = [];
+        saveCart();
+        updateCartDisplay();
+      }
+    });
+  }
+
+  // Checkout button (if exists)
+  if (checkoutBtn && modal && orderProductName && orderProductPrice) {
+    checkoutBtn.addEventListener('click', () => {
+      if (cart.length === 0) return;
+
+      orderProductName.innerHTML = '<strong>Order Summary:</strong><br>' +
+        cart.map(item => `${item.name} x${item.quantity} - ₱${(item.price * item.quantity).toFixed(2)}`).join('<br>');
+
+      const total = cart.reduce((sum, item) => sum + item.price * item.quantity, 0);
+      orderProductPrice.innerHTML = `<strong>Total Price:</strong> ₱${total.toFixed(2)}`;
+
+      modal.classList.add('active');
+    });
+
+    modalClose?.addEventListener('click', () => {
+      modal.classList.remove('active');
+    });
+
+    confirmPurchaseBtn?.addEventListener('click', () => {
+      alert('Thank you for your purchase!');
+      cart = [];
+      saveCart();
+      updateCartDisplay();
+      modal.classList.remove('active');
+    });
+  }
+
+  // Initial load
+  updateCartDisplay();
+  </script>
+</body>
+</html>

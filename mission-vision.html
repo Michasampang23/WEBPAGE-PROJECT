@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Mission & Vision - ACTIVION Studios</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+  <style>
+    body {
+      background-color: #0d0d0d;
+      color: #b6f0b6;
+    }
+    /* Initially hide all content sections */
+    .toggle-content {
+      display: none;
+    }
+    /* Show content when active */
+    .toggle-content.active {
+      display: block;
+    }
+  </style>
+</head>
+<body class="font-sans">
+
+<!-- Navbar -->
+  <header class="bg-green-600 shadow-md sticky top-0 z-50">
+    <div class="max-w-7xl mx-auto flex justify-between items-center px-6 py-4">
+      <h1 class="text-3xl font-extrabold text-black tracking-tight">ACTIVION Studios</h1>
+      <nav>
+        <ul class="flex flex-wrap gap-4 text-white font-semibold">
+          <li><a href="homepage.html" class="hover:text-black transition">Home</a></li>
+          <li><a href="about.html" class="hover:text-black transition">About</a></li>
+          <li><a href="gallery.html" class="hover:text-black transition font-bold underline">Shop</a></li>
+          <li><a href="mission-vision.html" class="hover:text-black transition">Mission</a></li>
+          <li><a href="services.html" class="hover:text-black transition">Services</a></li>
+          <li><a href="testimonials.html" class="hover:text-black transition">Testimonials</a></li>
+          <li><a href="contact.html" class="hover:text-black transition">Contact</a></li>
+          <li><a href="blog.html" class="hover:text-black transition">Blog</a></li>
+          <li><a href="faq.html" class="hover:text-black transition">FAQ</a></li>
+          <li><a href="profile.html" class="hover:text-black transition">Profile</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="text-center py-20 px-6 max-w-4xl mx-auto" data-aos="fade-down">
+    <h2 class="text-5xl font-bold mb-6 text-green-400">Our Mission & Vision</h2>
+    <p class="text-lg text-green-200 max-w-3xl mx-auto">
+      At ACTIVION Studios, we blend aspiration, creativity, and technology to empower brands and digital experiences that inspire.
+    </p>
+  </section>
+
+  <!-- Sections 2 by 2 with toggle buttons -->
+
+  <section class="max-w-6xl mx-auto px-6 py-12 grid grid-cols-1 md:grid-cols-2 gap-10">
+
+    <!-- Mission -->
+    <div class="bg-[#121212] rounded-lg shadow-lg p-6" data-aos="fade-right">
+      <button id="missionToggle" class="w-full text-left text-3xl font-bold mb-4 text-green-400 focus:outline-none">
+        Our Mission
+      </button>
+      <div id="missionContent" class="toggle-content text-green-200 leading-relaxed text-lg">
+        <p>
+          At ACTIVION Studios, our mission is to empower your brand through cutting-edge digital solutions that combine creativity, technology, and strategy. 
+          We believe every business deserves a unique identity that resonates with its audience and drives growth.
+        </p>
+        <p class="mt-4">
+          We are dedicated to understanding your vision and transforming it into compelling digital experiences — from branding and media production to interactive designs — that captivate and engage. 
+          Your success fuels our passion, and we strive to deliver results that exceed expectations while maintaining quality, innovation, and integrity in everything we do.
+        </p>
+        <p class="mt-4">
+          By choosing ACTIVION Studios, you’re not just getting a service — you’re gaining a committed partner invested in your long-term success.
+        </p>
+      </div>
+    </div>
+
+    <!-- Vision -->
+    <div class="bg-[#121212] rounded-lg shadow-lg p-6" data-aos="fade-left">
+      <button id="visionToggle" class="w-full text-left text-3xl font-bold mb-4 text-green-400 focus:outline-none">
+        Our Vision
+      </button>
+      <div id="visionContent" class="toggle-content text-green-200 leading-relaxed text-lg">
+        <p>
+          We envision a future where every business, regardless of size, harnesses the power of creativity and technology to elevate their brand and reach new heights.
+        </p>
+        <p class="mt-4">
+          Our vision is to be the most trusted creative digital agency known for innovative solutions that break barriers and set trends — inspiring transformation and delivering measurable impact for our clients worldwide.
+        </p>
+        <p class="mt-4">
+          At ACTIVION Studios, we are driven by passion, fueled by innovation, and committed to excellence. Together, we will shape the future of digital branding — making your brand unforgettable.
+        </p>
+      </div>
+    </div>
+
+    <!-- Core Values -->
+    <div class="bg-[#121212] rounded-lg shadow-lg p-6" data-aos="fade-up">
+      <button id="coreValuesToggle" class="w-full text-left text-3xl font-bold mb-4 text-green-400 focus:outline-none">
+        Our Core Values
+      </button>
+      <div id="coreValuesContent" class="toggle-content text-green-200 text-lg">
+        <ul class="list-disc list-inside space-y-3">
+          <li><strong>Creativity:</strong> We embrace innovative thinking to craft unique solutions tailored to your brand’s story.</li>
+          <li><strong>Integrity:</strong> Honesty and transparency guide every decision we make and relationship we build.</li>
+          <li><strong>Excellence:</strong> We commit to high-quality work that surpasses expectations and delivers real impact.</li>
+          <li><strong>Collaboration:</strong> Your vision matters — we work closely with you to bring it to life.</li>
+          <li><strong>Passion:</strong> We are deeply passionate about what we do, inspiring enthusiasm and energy in every project.</li>
+          <li><strong>Customer-Centric:</strong> Your satisfaction and success drive our efforts and fuel our continuous improvement.</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Why Choose Us -->
+    <div class="bg-[#121212] rounded-lg shadow-lg p-6" data-aos="fade-up" data-aos-delay="100">
+      <button id="whyChooseToggle" class="w-full text-left text-3xl font-bold mb-4 text-green-400 focus:outline-none">
+        Why Choose ACTIVION Studios?
+      </button>
+      <div id="whyChooseContent" class="toggle-content text-green-200 text-lg">
+        <p class="mb-4">
+          Choosing the right partner for your digital media and branding needs is crucial. Here’s why ACTIVION Studios stands out:
+        </p>
+        <ul class="list-disc list-inside space-y-3">
+          <li><strong>Tailored Solutions:</strong> We don’t do one-size-fits-all. Every project is customized to match your unique goals and audience.</li>
+          <li><strong>Experienced Team:</strong> Our talented designers, strategists, and developers bring years of expertise to the table.</li>
+          <li><strong>Innovative Technology:</strong> We leverage the latest tools and trends to keep your brand ahead of the curve.</li>
+          <li><strong>Transparent Process:</strong> You’ll always know what’s happening with clear communication and timely updates.</li>
+          <li><strong>Proven Results:</strong> Our portfolio and client testimonials showcase the positive impact we deliver consistently.</li>
+          <li><strong>Long-Term Partnership:</strong> We’re invested in your ongoing success — here for the long haul, not just a quick fix.</li>
+        </ul>
+      </div>
+    </div>
+
+  </section>
+
+  <!-- Footer -->
+  <footer class="bg-green-600 text-black py-6 mt-16">
+    <div class="text-center font-semibold max-w-7xl mx-auto">
+      &copy; 2025 ACTIVION Studios. Empowering your digital lifestyle.
+    </div>
+  </footer>
+
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script>
+    AOS.init();
+
+    const toggles = [
+      { btnId: 'missionToggle', contentId: 'missionContent' },
+      { btnId: 'visionToggle', contentId: 'visionContent' },
+      { btnId: 'coreValuesToggle', contentId: 'coreValuesContent' },
+      { btnId: 'whyChooseToggle', contentId: 'whyChooseContent' }
+    ];
+
+    toggles.forEach(({ btnId, contentId }) => {
+      const btn = document.getElementById(btnId);
+      const content = document.getElementById(contentId);
+
+      btn.addEventListener('click', () => {
+        toggles.forEach(({ contentId: otherContentId }) => {
+          const otherContent = document.getElementById(otherContentId);
+          if (otherContentId !== contentId) {
+            otherContent.classList.remove('active');
+          }
+        });
+        content.classList.toggle('active');
+      });
+    });
+  </script>
+
+</body>
+</html>

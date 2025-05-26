@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>ACTIVION Studios | Login</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    body {
+      background-image: url('templogo.jpg');
+      background-size: cover;
+      background-position: center;
+      min-height: 100vh;
+    }
+    .glass {
+      background: rgba(255, 255, 255, 0.1);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      border: 1px solid rgba(255, 255, 255, 0.2);
+    }
+    .animate-fadeInUp {
+      animation: fadeInUp 0.8s ease-out both;
+    }
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(30px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+  </style>
+</head>
+<body class="flex items-center justify-center p-6 text-white">
+
+  <div class="glass rounded-2xl shadow-2xl p-8 w-full max-w-md animate-fadeInUp" id="authContainer">
+
+    <!-- LOGIN FORM -->
+    <div id="loginForm" class="">
+      <h2 class="text-3xl font-bold text-center text-green-400 mb-6">Login to ACTIVION Studios</h2>
+      <form onsubmit="handleLogin(event)" class="space-y-4">
+        <div>
+          <label class="block text-sm font-medium">Username</label>
+          <input id="loginUsername" type="text" required
+            class="mt-1 w-full px-4 py-2 rounded-lg bg-white text-black" />
+        </div>
+        <div class="relative">
+          <label class="block text-sm font-medium">Password</label>
+          <input id="loginPassword" type="password" required
+            class="mt-1 w-full px-4 py-2 rounded-lg bg-white text-black pr-10" />
+          <button type="button" onclick="togglePasswordVisibility()" aria-label="Show Password"
+            class="absolute right-3 top-9 text-gray-600 hover:text-gray-900">👁️</button>
+        </div>
+        <div class="flex items-center space-x-2">
+          <input id="rememberMe" type="checkbox" class="accent-green-500" />
+          <label for="rememberMe" class="text-sm select-none">Remember Me</label>
+        </div>
+        <button type="submit"
+          class="w-full bg-green-600 hover:bg-green-700 text-white font-semibold py-2 rounded-lg">Login</button>
+      </form>
+      <p id="loginMessage" class="text-sm mt-4 text-center"></p>
+      <p class="text-sm mt-4 text-center">
+        Don't have an account?
+        <button onclick="toggleForms()" class="text-green-300 font-semibold hover:underline">Register here</button>
+      </p>
+    </div>
+
+    <!-- REGISTER FORM -->
+    <div id="registerForm" class="hidden">
+      <h2 class="text-3xl font-bold text-center text-green-400 mb-6">Create Account</h2>
+      <form onsubmit="handleRegister(event)" class="space-y-4">
+        <div>
+          <label class="block text-sm font-medium">Full Name</label>
+          <input id="fullName" type="text" required
+            class="mt-1 w-full px-4 py-2 rounded-lg bg-white text-black" />
+        </div>
+        <div>
+          <label class="block text-sm font-medium">Username</label>
+          <input id="newUsername" type="text" required
+            class="mt-1 w-full px-4 py-2 rounded-lg bg-white text-black" />
+        </div>
+        <div>
+          <label class="block text-sm font-medium">Email Address</label>
+          <input id="email" type="email" required
+            class="mt-1 w-full px-4 py-2 rounded-lg bg-white text-black" />
+        </div>
+        <div>
+          <label class="block text-sm font-medium">Password</label>
+          <input id="newPassword" type="password" required
+            class="mt-1 w-full px-4 py-2 rounded-lg bg-white text-black" />
+        </div>
+        <div>
+          <label class="block text-sm font-medium">Confirm Password</label>
+          <input id="confirmPassword" type="password" required
+            class="mt-1 w-full px-4 py-2 rounded-lg bg-white text-black" />
+        </div>
+        <button type="submit"
+          class="w-full bg-green-600 hover:bg-green-700 text-white font-semibold py-2 rounded-lg">Register</button>
+      </form>
+      <p id="registerMessage" class="text-sm mt-4 text-center"></p>
+      <p class="text-sm mt-4 text-center">
+        Already have an account?
+        <button onclick="toggleForms()" class="text-green-300 font-semibold hover:underline">Login here</button>
+      </p>
+    </div>
+
+  </div>
+
+  <script>
+    function toggleForms() {
+      const login = document.getElementById("loginForm");
+      const register = document.getElementById("registerForm");
+
+      login.classList.toggle("hidden");
+      register.classList.toggle("hidden");
+
+      // Clear messages
+      document.getElementById("loginMessage").textContent = "";
+      document.getElementById("registerMessage").textContent = "";
+    }
+
+    function togglePasswordVisibility() {
+      const pwd = document.getElementById("loginPassword");
+      pwd.type = pwd.type === "password" ? "text" : "password";
+    }
+
+    function handleLogin(event) {
+      event.preventDefault();
+      const username = document.getElementById("loginUsername").value.trim();
+      const password = document.getElementById("loginPassword").value;
+      const rememberMe = document.getElementById("rememberMe").checked;
+      const msg = document.getElementById("loginMessage");
+      const userData = JSON.parse(localStorage.getItem("user"));
+
+      if (userData && username === userData.username && password === userData.password) {
+        localStorage.setItem("loggedIn", "true");
+        if (rememberMe) {
+          localStorage.setItem("rememberUsername", username);
+        } else {
+          localStorage.removeItem("rememberUsername");
+        }
+        msg.style.color = "lightgreen";
+        msg.textContent = "Login successful! Redirecting...";
+
+        setTimeout(() => {
+          window.location.href = "homepage.html"; // your homepage file
+        }, 1000);
+      } else {
+        msg.style.color = "red";
+        msg.textContent = "Invalid username or password.";
+      }
+    }
+
+    function handleRegister(event) {
+      event.preventDefault();
+      const fullName = document.getElementById("fullName").value.trim();
+      const username = document.getElementById("newUsername").value.trim();
+      const email = document.getElementById("email").value.trim();
+      const password = document.getElementById("newPassword").value;
+      const confirmPassword = document.getElementById("confirmPassword").value;
+      const msg = document.getElementById("registerMessage");
+
+      if (password !== confirmPassword) {
+        msg.style.color = "red";
+        msg.textContent = "Passwords do not match.";
+        return;
+      }
+
+      const user = { fullName, username, email, password };
+      localStorage.setItem("user", JSON.stringify(user));
+      msg.style.color = "lightgreen";
+      msg.textContent = "Account created! Please login.";
+      toggleForms();
+    }
+
+    window.onload = () => {
+      const rememberedUsername = localStorage.getItem("rememberUsername");
+      if (rememberedUsername) {
+        document.getElementById("loginUsername").value = rememberedUsername;
+        document.getElementById("rememberMe").checked = true;
+      }
+    };
+  </script>
+
+</body>
+</html>
